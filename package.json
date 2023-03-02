@@ -2,10 +2,10 @@
   "name": "quotee-server",
   "version": "1.0.0",
   "description": "",
-  "main": "server.js",
+  "main": "index.js",
   "scripts": {
-    "serve": "node server.js",
-    "start": "node server.js"
+    "serve": "node index",
+    "start": "node index"
   },
   "keywords": [],
   "author": "",
