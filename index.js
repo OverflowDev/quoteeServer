@@ -18,7 +18,7 @@ const resolvers = require('./graphql/resolvers')
 
 const PORT = process.env.PORT || 7000
 
-async function startServer() {
+// async function startServer() {
     const app = express()
 
     // const httpServer = http.createServer(app)
@@ -46,6 +46,6 @@ async function startServer() {
     // Start Server 
     await new Promise((resolve) => app.listen(PORT, resolve))
     console.log(`🚀 Server ready at http://localhost:${PORT}/quotee`)
-}
+// }
 
-startServer()
+// startServer()
