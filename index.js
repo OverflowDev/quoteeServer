@@ -29,7 +29,7 @@ const PORT = process.env.PORT || 7000
         // plugins: [ApolloServerPluginDrainHttpServer({httpServer})]
     })
 
-    await apolloServer.start()
+    apolloServer.start()
 
     app.use(
         '/quotee',
