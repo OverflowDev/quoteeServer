@@ -31,6 +31,9 @@ const PORT = process.env.PORT || 7000
 
     apolloServer.start()
 
+    // Connect to Db 
+    connectDB()
+
     app.use(
         '/quotee',
         cors(),
@@ -39,9 +42,6 @@ const PORT = process.env.PORT || 7000
             context: async ({req}) => ({req})
         })
     )
-
-    // Connect to Db 
-    connectDB()
 
     // Start Server 
     await new Promise((resolve) => app.listen(PORT, resolve))
