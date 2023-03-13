@@ -18,21 +18,18 @@ const resolvers = require('./graphql/resolvers')
 
 const PORT = process.env.PORT || 7000
 
-// async function startServer() {
+async function startServer() {
     const app = express()
 
-    // const httpServer = http.createServer(app)
+    const httpServer = http.createServer(app)
 
     const apolloServer = new ApolloServer({
         typeDefs,
         resolvers,
-        // plugins: [ApolloServerPluginDrainHttpServer({httpServer})]
+        plugins: [ApolloServerPluginDrainHttpServer({httpServer})]
     })
 
-    apolloServer.start()
-
-    // Connect to Db 
-    connectDB()
+    await apolloServer.start()
 
     app.use(
         '/quotee',
@@ -43,9 +40,12 @@ const PORT = process.env.PORT || 7000
         })
     )
 
+    // Connect to Db 
+    connectDB()
+
     // Start Server 
     await new Promise((resolve) => app.listen(PORT, resolve))
     console.log(`🚀 Server ready at http://localhost:${PORT}/quotee`)
-// }
+}
 
-// startServer()
+startServer()
