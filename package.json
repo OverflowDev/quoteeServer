@@ -6,7 +6,7 @@
   "scripts": {
     "serve": "node index.js",
     "start": "node index.js",
-    "web": "node index.js"
+    "web": "nodemon index.js"
   },
   "keywords": [],
   "author": "",
