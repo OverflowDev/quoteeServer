@@ -45,7 +45,7 @@ async function startServer() {
 
     // Start Server 
     await new Promise((resolve) => app.listen(PORT, resolve))
-    console.log(`🚀 Server ready at http://localhost:${PORT}/quotee`)
+    console.log(`🚀 Server ready`)
 }
 
 startServer()
